@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "testingmod:item/fossil_bone"
+    "layer0": "prehistoricworld:item/glass_vial"
   }
 }

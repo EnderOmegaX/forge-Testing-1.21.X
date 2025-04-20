@@ -1,0 +1,16 @@
+{
+  "item.prehistoricworld.fossil": "Fossil",
+  "item.prehistoricworld.fossil_bone": "Fossil Bone",
+  "item.prehistoricworld.glass_vial": "Glass Vial",
+  "item.prehistoricworld.unearthed_fossil": "Unearthed Fossil",
+
+  "block.prehistoricworld.unearthed_skull_fossil": "Unearthed Skull Fossil",
+  "block.prehistoricworld.unearthed_broken_fossil": "Unearthed Broken Fossil",
+  "block.prehistoricworld.unearthed_long_fossil": "Unearthed Long Fossil",
+  "block.prehistoricworld.unearthed_limb_fossil": "Unearthed Limb Fossil",
+
+  "creativetab.prehistoricworld.prehistoric_items": "Prehistoric Items",
+  "creativetab.prehistoricworld.prehistoric_blocks": "Prehistoric Blocks"
+
+
+}

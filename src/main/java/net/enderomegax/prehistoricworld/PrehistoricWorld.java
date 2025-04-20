@@ -1,9 +1,9 @@
-package net.enderomegax.testingmod;
+package net.enderomegax.prehistoricworld;
 
 import com.mojang.logging.LogUtils;
-import net.enderomegax.testingmod.block.ModBlocks;
-import net.enderomegax.testingmod.item.Moditems;
-import net.minecraft.world.item.CreativeModeTab;
+import net.enderomegax.prehistoricworld.block.ModBlocks;
+import net.enderomegax.prehistoricworld.item.ModCreativeModeTabs;
+import net.enderomegax.prehistoricworld.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,21 +19,23 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(TestingMod.MOD_ID)
-public class TestingMod {
+@Mod(PrehistoricWorld.MOD_ID)
+public class PrehistoricWorld {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "testingmod";
+    public static final String MOD_ID = "prehistoricworld";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public TestingMod(FMLJavaModLoadingContext context) {
+    public PrehistoricWorld(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
-        // Register the commonSetup method for modloading
+        // Register the commonSetup method for mod loading
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        Moditems.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
@@ -49,9 +51,20 @@ public class TestingMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(Moditems.Fossil);
-            event.accept(Moditems.Fossil_Bone);
+            event.accept(ModItems.Fossil);
+            event.accept(ModItems.Fossil_Bone);
+            event.accept(ModItems.Glass_Vial);
+            event.accept(ModItems.Unearthed_Fossil);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+                event.accept(ModBlocks.UNEARTHED_SKULL_FOSSIL);
+                event.accept(ModBlocks.UNEARTHED_BROKEN_FOSSIL);
+                event.accept(ModBlocks.UNEARTHED_LONG_FOSSIL);
+                event.accept(ModBlocks.UNEARTHED_LIMB_FOSSIL);
+        }
+
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

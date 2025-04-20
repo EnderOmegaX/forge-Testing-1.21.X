@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "testingmod:item/fossil"
+    "layer0": "prehistoricworld:item/fossil_bone"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "prehistoricworld:unearthed_broken_fossil",
+    "prehistoricworld:unearthed_limb_fossil",
+    "prehistoricworld:unearthed_long_fossil",
+    "prehistoricworld:unearthed_skull_fossil"
+  ]
+}
